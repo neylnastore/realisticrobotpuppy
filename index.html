@@ -1,1 +1,866 @@
-sddd
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realistic Robot Puppy - Importan.co</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-open {
+            overflow: hidden;
+        }
+        
+        .notification {
+            animation: slideIn 0.5s forwards, slideOut 0.5s forwards 4s;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateY(0); }
+            to { transform: translateY(100%); }
+        }
+        
+        .swipe-up {
+            animation: swipeUp 0.5s forwards;
+        }
+        
+        @keyframes swipeUp {
+            to { transform: translateY(-100%); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-1/480470725_122218523756059217_4375162344964440565_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=jfyepeJck3QQ7kNvwF2S-C2&_nc_oc=Adljd9pMRuCzpNymtc34UL-GSXTnubZZdFfUJhmwrhIEZhk6L73EuHJulHHJgYCeN-w&_nc_zt=24&_nc_ht=scontent.fsub8-1.fna&_nc_gid=COBS0edcQe4CYG84mmwjWA&oh=00_AfPxpvSpYJTeGcELFOIxRMC-6IBYSGgoC-IXl_-3EJpRTQ&oe=685B476E" 
+                     alt="Importan.co Logo" class="h-10 w-10 rounded-full">
+                <span class="text-xl font-bold text-gray-800">Importan.co</span>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Fitur</a>
+                <a href="#gallery" class="text-gray-600 hover:text-blue-600 transition">Galeri</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition">Testimoni</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-600 transition">FAQ</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#features" class="block py-2 text-gray-600 hover:text-blue-600 transition">Fitur</a>
+            <a href="#gallery" class="block py-2 text-gray-600 hover:text-blue-600 transition">Galeri</a>
+            <a href="#testimonials" class="block py-2 text-gray-600 hover:text-blue-600 transition">Testimoni</a>
+            <a href="#faq" class="block py-2 text-gray-600 hover:text-blue-600 transition">FAQ</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 leading-tight mb-4">
+                    Realistic Robot Puppy<br>
+                    <span class="text-blue-600">Teman Digital Terbaik Keluarga Anda</span>
+                </h1>
+                <p class="text-lg text-gray-600 mb-8">
+                    Hadirkan keceriaan tanpa repot merawat hewan peliharaan sungguhan. Robot anjing pintar ini akan menjadi teman setia anak-anak dan keluarga Anda.
+                </p>
+                <div class="flex flex-wrap gap-4 mb-8">
+                    <div class="flex items-center bg-white rounded-full px-4 py-2 shadow">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm font-medium">Responsif & Interaktif</span>
+                    </div>
+                    <div class="flex items-center bg-white rounded-full px-4 py-2 shadow">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm font-medium">Tanpa Perawatan</span>
+                    </div>
+                    <div class="flex items-center bg-white rounded-full px-4 py-2 shadow">
+                        <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                        <span class="text-sm font-medium">Ramah Anak</span>
+                    </div>
+                </div>
+                <div class="flex items-center mb-6">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/46.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/men/36.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                    </div>
+                    <div class="ml-4">
+                        <div class="flex items-center">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="text-gray-600 ml-1">(4k+ reviews)</span>
+                        </div>
+                        <p class="text-sm text-gray-600"><span id="view-counter">1,257</span> orang sedang melihat produk ini</p>
+                    </div>
+                </div>
+                <a href="#order" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full inline-flex items-center transition duration-300 transform hover:scale-105 shadow-lg">
+                    <span>BELI SEKARANG</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="https://cdn.wshopon.com/image/1dda3f5c8df514687327db702ea94fbbf4e7f99c-700.png" 
+                         alt="Realistic Robot Puppy Brown" 
+                         class="w-full max-w-md mx-auto pulse">
+                    <div class="absolute -bottom-5 -right-5 bg-white rounded-full shadow-lg p-3">
+                        <div class="bg-blue-100 rounded-full p-3">
+                            <i class="fas fa-play text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Solution Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Masalah yang Sering Dihadapi Orang Tua</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Anak-anak sering meminta hewan peliharaan, tetapi banyak tantangan yang membuat orang tua ragu</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-times text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Alergi & Kebersihan</h3>
+                    <p class="text-gray-600">Banyak anak yang alergi terhadap bulu hewan, dan menjaga kebersihan rumah dengan hewan peliharaan membutuhkan usaha ekstra.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Waktu & Perhatian</h3>
+                    <p class="text-gray-600">Merawat hewan peliharaan membutuhkan komitmen waktu yang besar untuk memberi makan, membersihkan, dan memberikan perhatian.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-sm">
+                    <div class="bg-red-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-money-bill-wave text-red-500 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Biaya Tinggi</h3>
+                    <p class="text-gray-600">Biaya makanan, perawatan kesehatan, dan aksesoris hewan peliharaan bisa sangat mahal dalam jangka panjang.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-blue-50 rounded-xl p-8 text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-blue-600 mb-4">Solusi: Realistic Robot Puppy</h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Dengan Robot Anjing Pintar ini, anak-anak bisa merasakan pengalaman memiliki teman bermain tanpa semua masalah di atas. Robot ini memberikan interaksi menyenangkan, edukatif, dan yang terpenting - <span class="font-semibold">tanpa repot!</span>
+                </p>
+                <a href="#order" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full inline-flex items-center transition duration-300">
+                    <span>COBA SEKARANG</span>
+                    <i class="fas fa-paw ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Fitur Unggulan Robot Puppy</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Didesain untuk memberikan pengalaman terbaik bagi anak-anak dan keluarga</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-microphone text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Responsif terhadap Suara</h3>
+                    <p class="text-gray-600">Robot ini dapat mengenali dan merespons perintah suara, membuat interaksi lebih alami dan menyenangkan.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-route text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Navigasi Mandiri</h3>
+                    <p class="text-gray-600">Dilengkapi sensor canggih untuk menghindari rintangan dan menjelajahi ruangan dengan aman.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-heart text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Ekspresi Emosional</h3>
+                    <p class="text-gray-600">Dapat menunjukkan berbagai ekspresi melalui LED dan gerakan, membantu perkembangan emosional anak.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Konten Edukatif</h3>
+                    <p class="text-gray-600">Mengajarkan anak tentang tanggung jawab, kasih sayang, dan dasar-dasar pemrograman melalui permainan interaktif.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-battery-full text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Baterai Tahan Lama</h3>
+                    <p class="text-gray-600">Dengan baterai lithium-ion yang bisa bertahan hingga 8 jam penggunaan aktif, dan hanya membutuhkan 2 jam pengisian.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-child text-blue-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Ramah Anak</h3>
+                    <p class="text-gray-600">Terbuat dari bahan non-toxic yang aman untuk anak-anak, dengan desain yang kokoh dan tahan terhadap benturan ringan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Galeri Produk</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Lihat lebih dekat Realistic Robot Puppy dalam berbagai warna dan aksi</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.wshopon.com/image/1dda3f5c8df514687327db702ea94fbbf4e7f99c-700.png" 
+                         alt="Brown Robot Puppy" 
+                         class="w-full h-48 object-contain rounded-lg hover:shadow-lg transition">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.wshopon.com/image/787de5116804e2cdd965af48d6b9137f57b6c167-600.png" 
+                         alt="White Robot Puppy" 
+                         class="w-full h-48 object-contain rounded-lg hover:shadow-lg transition">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.wshopon.com/image/b323970a9919ed449329480792d4b7a70530f27c-600.png" 
+                         alt="Beige Robot Puppy" 
+                         class="w-full h-48 object-contain rounded-lg hover:shadow-lg transition">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.wshopon.com/image/1dda3f5c8df514687327db702ea94fbbf4e7f99c-700.png" 
+                         alt="Robot Puppy Playing" 
+                         class="w-full h-48 object-contain rounded-lg hover:shadow-lg transition">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.wshopon.com/image/787de5116804e2cdd965af48d6b9137f57b6c167-600.png" 
+                         alt="Robot Puppy Charging" 
+                         class="w-full h-48 object-contain rounded-lg hover:shadow-lg transition">
+                </div>
+                <div class="gallery-item cursor-pointer">
+                    <img src="https://cdn.wshopon.com/image/b323970a9919ed449329480792d4b7a70530f27c-600.png" 
+                         alt="Robot Puppy with Kids" 
+                         class="w-full h-48 object-contain rounded-lg hover:shadow-lg transition">
+                </div>
+            </div>
+            
+            <!-- Image Modal -->
+            <div id="image-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75 hidden">
+                <div class="modal-content bg-white rounded-lg max-w-4xl w-full p-4 relative">
+                    <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    <img id="modal-image" src="" alt="" class="w-full max-h-screen-80 object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Testimoni nyata dari pelanggan yang sudah membeli Robot Puppy kami</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-sm testimonial-card transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-lg mr-4">D</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Dewi Lestari</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Anak saya yang alergi bulu hewan akhirnya bisa punya 'anjing' juga! Robot ini sangat responsif dan lucu. Sekarang dia tidak lagi minta dibelikan anjing sungguhan."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm testimonial-card transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-lg mr-4">B</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Budi Santoso</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Sebagai orang tua yang sibuk, robot ini solusi sempurna. Tidak perlu repot memberi makan atau membersihkan kotoran, tapi anak tetap senang punya teman bermain."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm testimonial-card transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-lg mr-4">S</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Siti Rahayu</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Saya belikan untuk keponakan yang autis. Luar biasa, robot ini membantu meningkatkan interaksi sosialnya. Sekarang dia lebih sering tersenyum dan berkomunikasi."</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm testimonial-card transition">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center font-bold text-lg mr-4">A</div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Agus Setiawan</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Kualitas produk sangat bagus untuk harganya. Anak-anak di rumah berebutan main dengan robot ini. Bahkan saya sendiri suka mengajaknya bermain!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Pertanyaan yang Sering Diajukan</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">Temukan jawaban atas pertanyaan Anda tentang Realistic Robot Puppy</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="border-b border-gray-200 py-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Berapa lama waktu pengiriman?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-2 text-gray-600">
+                        Kami melakukan pengiriman dalam 1-3 hari kerja setelah pembayaran dikonfirmasi. Untuk wilayah Jabodetabek biasanya sampai dalam 2-3 hari, sedangkan luar Jawa membutuhkan waktu 3-7 hari kerja tergantung lokasi.
+                    </div>
+                </div>
+                
+                <div class="border-b border-gray-200 py-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Apa saja yang termasuk dalam paket pembelian?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-2 text-gray-600">
+                        Dalam paket pembelian Anda akan menerima: 1 unit Robot Puppy, charger USB, panduan penggunaan dalam Bahasa Indonesia, dan bonus mainan kecil untuk robot (boneka atau bola kecil).
+                    </div>
+                </div>
+                
+                <div class="border-b border-gray-200 py-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Apakah ada garansi untuk produk ini?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-2 text-gray-600">
+                        Ya, kami memberikan garansi resmi 1 tahun untuk kerusakan akibat cacat produksi. Garansi tidak mencakup kerusakan akibat penggunaan yang tidak sesuai panduan atau modifikasi oleh pihak ketiga.
+                    </div>
+                </div>
+                
+                <div class="border-b border-gray-200 py-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Bagaimana cara merawat Robot Puppy?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-2 text-gray-600">
+                        Perawatan sangat mudah: hindari air dan kelembaban berlebih, bersihkan permukaan dengan kain lembut yang sedikit dibasahi jika kotor, simpan di tempat kering saat tidak digunakan, dan charge baterai secara teratur meskipun tidak dipakai untuk menjaga kesehatan baterai.
+                    </div>
+                </div>
+                
+                <div class="border-b border-gray-200 py-4">
+                    <button class="faq-question flex justify-between items-center w-full text-left font-medium text-gray-800 hover:text-blue-600 focus:outline-none">
+                        <span>Apakah produk ini aman untuk anak di bawah 3 tahun?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </button>
+                    <div class="faq-answer hidden mt-2 text-gray-600">
+                        Robot Puppy kami dirancang untuk anak usia 3 tahun ke atas. Untuk anak di bawah 3 tahun, disarankan pengawasan orang tua karena terdapat bagian kecil yang mungkin berisiko jika dimasukkan ke mulut.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="order" class="py-16 bg-gradient-to-r from-blue-500 to-blue-700">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-10">
+                        <h2 class="text-3xl font-bold text-gray-800 mb-4">Realistic Robot Puppy</h2>
+                        <p class="text-gray-600 mb-6">Hadiah sempurna untuk anak-anak dan keluarga yang menginginkan teman bermain tanpa repot perawatan hewan peliharaan sungguhan.</p>
+                        
+                        <div class="flex items-center mb-6">
+                            <div class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-bold mr-3">PROMO</div>
+                            <div class="text-gray-600">Berakhir dalam: <span id="countdown" class="font-bold text-red-600">02:59:59</span></div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center">
+                                <span class="text-4xl font-bold text-blue-600">Rp185.000</span>
+                                <span class="ml-3 text-lg text-gray-500 line-through">Rp277.500</span>
+                                <span class="ml-2 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded">33% OFF</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-1">Harga normal setelah promo: Rp277.500</p>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-medium text-gray-700">Stok tersedia: <span id="stock-counter">27</span> unit</span>
+                                <span class="text-xs text-gray-500">Terjual Hari Ini 743 unit</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        
+                        <a href="https://vera.orderonline.id/realistic-robot-puppy" 
+                           class="block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-center transition duration-300 transform hover:scale-105 mb-4">
+                            BELI SEKARANG JUGA
+                        </a>
+                        
+                        <div class="flex items-center justify-center text-sm text-gray-600">
+                            <i class="fas fa-lock mr-2"></i>
+                            <span>Pembayaran aman melalui berbagai metode pembayaran</span>
+                        </div>
+                    </div>
+                    
+                    <div class="md:w-1/2 bg-gray-50 p-8 md:p-10 flex items-center justify-center">
+                        <div class="relative">
+                            <img src="https://cdn.wshopon.com/image/787de5116804e2cdd965af48d6b9137f57b6c167-600.png" 
+                                 alt="White Robot Puppy" 
+                                 class="w-full max-w-xs mx-auto">
+                            <div class="absolute -bottom-4 -right-4 bg-white rounded-full shadow-lg p-3">
+                                <div class="bg-yellow-100 rounded-full p-3">
+                                    <i class="fas fa-gift text-yellow-600 text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-6 border-t border-gray-200">
+                    <div class="flex flex-wrap items-center justify-center gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm">Garansi 1 Tahun</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm">Pengiriman Cepat</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm">Original 100%</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span class="text-sm">Customer Support 24/7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fake Notification -->
+    <div id="fake-notification" class="notification fixed bottom-4 right-4 bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden z-50 max-w-xs hidden">
+        <div class="flex items-start p-3 cursor-pointer" id="notification-content">
+            <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-bold mr-3" id="notification-initial">S</div>
+            <div class="flex-1">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h4 class="font-semibold text-sm" id="notification-name">Sarah</h4>
+                        <p class="text-xs text-gray-500 mb-1" id="notification-location">Jakarta</p>
+                    </div>
+                    <span class="text-xs text-gray-400">Baru saja</span>
+                </div>
+                <p class="text-sm text-gray-700">Baru saja memesan <span class="font-semibold">Realistic Robot Puppy</span></p>
+            </div>
+        </div>
+        <div class="flex justify-between items-center bg-gray-50 px-3 py-2 border-t border-gray-200">
+            <button id="close-notification" class="text-xs text-gray-500 hover:text-gray-700">Tutup</button>
+            <button id="swipe-notification" class="text-xs text-blue-500 hover:text-blue-700">Geser ke atas</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="https://scontent.fsub8-1.fna.fbcdn.net/v/t39.30808-1/480470725_122218523756059217_4375162344964440565_n.jpg?stp=dst-jpg_s200x200_tt6&_nc_cat=110&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=jfyepeJck3QQ7kNvwF2S-C2&_nc_oc=Adljd9pMRuCzpNymtc34UL-GSXTnubZZdFfUJhmwrhIEZhk6L73EuHJulHHJgYCeN-w&_nc_zt=24&_nc_ht=scontent.fsub8-1.fna&_nc_gid=COBS0edcQe4CYG84mmwjWA&oh=00_AfPxpvSpYJTeGcELFOIxRMC-6IBYSGgoC-IXl_-3EJpRTQ&oe=685B476E" 
+                             alt="Importan.co Logo" class="h-10 w-10 rounded-full mr-2">
+                        <span class="text-xl font-bold">Importan.co</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Menyediakan produk teknologi inovatif untuk keluarga Indonesia sejak 2020.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Produk</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Robot Puppy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Robot Kucing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Drone Anak</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Smart Toys</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Bantuan</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Cara Pesan</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pengiriman</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Pembayaran</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Garansi</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Hubungi Kami</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">0822-4593-8672</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-brands fa-instagram text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">@importan.co</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-gray-400 mr-2"></i>
+                            <span class="text-gray-400">Jakarta, Indonesia</span>
+                        </li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 Importan.co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('rotate-180');
+                
+                // Close other answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Image Gallery Modal
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModal = document.getElementById('close-modal');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                modalImage.src = item.src;
+                modalImage.alt = item.alt;
+                modal.classList.remove('hidden');
+                document.body.classList.add('modal-open');
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }
+        });
+
+        // Dynamic Counters
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 16);
+        }
+
+        // Initialize counters when scrolled into view
+        const countersInitialized = {
+            viewers: false,
+            stock: false
+        };
+
+        function checkCounters() {
+            const viewersElement = document.getElementById('view-counter');
+            const stockElement = document.getElementById('stock-counter');
+            
+            const viewersRect = viewersElement.getBoundingClientRect();
+            const stockRect = stockElement.getBoundingClientRect();
+            
+            if (viewersRect.top < window.innerHeight && !countersInitialized.viewers) {
+                animateCounter(viewersElement, 1257);
+                countersInitialized.viewers = true;
+            }
+            
+            if (stockRect.top < window.innerHeight && !countersInitialized.stock) {
+                animateCounter(stockElement, 27);
+                countersInitialized.stock = true;
+            }
+        }
+
+        window.addEventListener('scroll', checkCounters);
+        window.addEventListener('load', checkCounters);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const countdownElement = document.getElementById('countdown');
+            let hours = 2;
+            let minutes = 59;
+            let seconds = 59;
+            
+            const timer = setInterval(() => {
+                seconds--;
+                
+                if (seconds < 0) {
+                    seconds = 59;
+                    minutes--;
+                }
+                
+                if (minutes < 0) {
+                    minutes = 59;
+                    hours--;
+                }
+                
+                if (hours < 0) {
+                    clearInterval(timer);
+                    countdownElement.textContent = "00:00:00";
+                    return;
+                }
+                
+                const formattedHours = hours.toString().padStart(2, '0');
+                const formattedMinutes = minutes.toString().padStart(2, '0');
+                const formattedSeconds = seconds.toString().padStart(2, '0');
+                
+                countdownElement.textContent = `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+            }, 1000);
+        }
+
+        updateCountdown();
+
+        // Fake Notification
+        const names = ['Sarah', 'Budi', 'Dewi', 'Agus', 'Siti', 'Ahmad', 'Rina', 'Joko'];
+        const cities = ['Jakarta', 'Bandung', 'Surabaya', 'Medan', 'Makassar', 'Yogyakarta', 'Semarang', 'Denpasar'];
+        
+        function showRandomNotification() {
+            const notification = document.getElementById('fake-notification');
+            const notificationName = document.getElementById('notification-name');
+            const notificationLocation = document.getElementById('notification-location');
+            
+            // Random name and city
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            
+            notificationName.textContent = randomName;
+            notificationLocation.textContent = randomCity;
+            document.getElementById('notification-initial').textContent = randomName.charAt(0);
+            
+            notification.classList.remove('hidden');
+            
+            // Auto close after 7 seconds
+            setTimeout(() => {
+                if (!notification.classList.contains('hidden')) {
+                    notification.classList.add('swipe-up');
+                    setTimeout(() => {
+                        notification.classList.add('hidden');
+                        notification.classList.remove('swipe-up');
+                    }, 500);
+                }
+            }, 7000);
+        }
+        
+        // Show first notification after 3 seconds
+        setTimeout(showRandomNotification, 3000);
+        
+        // Show subsequent notifications every 30-60 seconds
+        setInterval(showRandomNotification, Math.random() * 30000 + 30000);
+        
+        // Close notification buttons
+        document.getElementById('close-notification').addEventListener('click', () => {
+            const notification = document.getElementById('fake-notification');
+            notification.classList.add('hidden');
+        });
+        
+        document.getElementById('swipe-notification').addEventListener('click', () => {
+            const notification = document.getElementById('fake-notification');
+            notification.classList.add('swipe-up');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+                notification.classList.remove('swipe-up');
+            }, 500);
+        });
+        
+        // Click anywhere on notification to close
+        document.getElementById('notification-content').addEventListener('click', () => {
+            const notification = document.getElementById('fake-notification');
+            notification.classList.add('swipe-up');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+                notification.classList.remove('swipe-up');
+            }, 500);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
